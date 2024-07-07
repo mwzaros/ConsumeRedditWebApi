@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4"</h1>
+    <p>My Reddit Viewer</p>
+</div>
+
+<div>
+    <table id="tblOne" style="width:50%; float:left">
+        <tr><h2 class="floor">Mos UpVotes</h2></tr>
+        <tr>
+            <td id="partialZone1"></td>
+        </tr>
+    </table>
+    <table id="tblTwo" style="width:50%; float:left">
+        <tr><h2 class="floor">Most User Posts</h2></tr>
+        <tr>
+            <td id="partialZone2"></td>
+        </tr>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/jscript">
+
+    $(document).ready(function () {
+        var url = "@(Html.Raw(Url.Action("SubredditTopPostsPartialView", "home")))";
+        $("#partialZone1").load(url);
+        var url = "@(Html.Raw(Url.Action("SubredditTopUserPostsPartialView", "home")))";
+        $("#partialZone2").load(url);
+        setInterval(function () {
+            var url = "@(Html.Raw(Url.Action("SubredditTopPostsPartialView", "home")))";
+            $("#partialZone1").load(url);
+            var url = "@(Html.Raw(Url.Action("SubredditTopUserPostsPartialView", "home")))";
+            $("#partialZone2").load(url);
+        }, 30000); //Refreshes every 30 seconds
+
+        $.ajaxSetup({ cache: false });  //Turn off caching
+    });
+</script>
+
+
