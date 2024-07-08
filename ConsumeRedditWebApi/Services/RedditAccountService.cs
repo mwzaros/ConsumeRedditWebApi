@@ -13,6 +13,9 @@ namespace ConsumeRedditWebApi.Services
         public RedditAccountService(HttpClient httpClient)
         {
             _httpClient = httpClient;
+            if (httpClient.BaseAddress == null)
+                httpClient.BaseAddress = new Uri("https://www.reddit.com/api/v1/");
+
         }
         public async Task<string> GetToken(string clientId, string clientSecret)
         {

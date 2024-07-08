@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumeRedditWebApi", "ConsumeRedditWebApi\ConsumeRedditWebApi.csproj", "{7EED2C0A-687B-4C46-8B4A-891CBB5B85DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsumeRedditWebApi", "ConsumeRedditWebApi\ConsumeRedditWebApi.csproj", "{7EED2C0A-687B-4C46-8B4A-891CBB5B85DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumeRedditWebApi.Tests", "ConsumeRedditWebApi.Tests\ConsumeRedditWebApi.Tests.csproj", "{C2A4D794-E414-4037-A80D-7812F58796B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7EED2C0A-687B-4C46-8B4A-891CBB5B85DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EED2C0A-687B-4C46-8B4A-891CBB5B85DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EED2C0A-687B-4C46-8B4A-891CBB5B85DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2A4D794-E414-4037-A80D-7812F58796B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2A4D794-E414-4037-A80D-7812F58796B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2A4D794-E414-4037-A80D-7812F58796B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2A4D794-E414-4037-A80D-7812F58796B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

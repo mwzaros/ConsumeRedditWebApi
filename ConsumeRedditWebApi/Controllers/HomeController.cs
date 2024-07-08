@@ -32,12 +32,12 @@ namespace ConsumeRedditWebApi.Controllers
 
         public async Task<IActionResult> SubredditTopPostsPartialView()
         {
-            var subReddits = await GetTopPosts("OUTFITS", 0);
+            var subReddits = await GetTopPosts("OUTFITS", 100);
             return PartialView("_partialView1", subReddits);
         }
         public async Task<IActionResult> SubredditTopUserPostsPartialView()
         {
-            var subReddits = await GetTopUserPosts("OUTFITS", 0);
+            var subReddits = await GetTopUserPosts("OUTFITS", 100);
             return PartialView("_partialView2", subReddits);
         }
         private async Task<IEnumerable<SubReddit>> GetTopPosts(string subject, int limit)

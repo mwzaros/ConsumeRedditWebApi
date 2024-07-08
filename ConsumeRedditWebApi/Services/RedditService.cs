@@ -13,14 +13,15 @@ namespace ConsumeRedditWebApi.Services
         public RedditService(HttpClient httpClient)
         {
             _httpClient = httpClient;
+            if (httpClient.BaseAddress == null)
+                httpClient.BaseAddress = new Uri("https://oauth.reddit.com/");
         }
         public async Task<IEnumerable<SubReddit>> GetMostUpVotes(string subject, int limit, string accessToken)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", accessToken);
             _httpClient.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue("(+True_Fortune_9768)"));
 
-            //var response = await _httpClient.GetAsync($"r/" + subject + "/top.json?limit=100");
-            var response = await _httpClient.GetAsync($"r/" + subject + "/new.json?limit=100");
+            var response = await _httpClient.GetAsync($"r/" + subject + "/new.json?limit="+ limit.ToString());
 
             response.EnsureSuccessStatusCode();
 
