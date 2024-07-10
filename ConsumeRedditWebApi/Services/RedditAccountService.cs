@@ -27,9 +27,7 @@ namespace ConsumeRedditWebApi.Services
             request.Headers.Add("User-Agent", "True_Fortune_9768");
             request.Content = new FormUrlEncodedContent(new Dictionary<string, string>
             {
-                { "grant_type", "password"},
-                    { "username", "True_Fortune_9768"},
-                    { "password", "xU0ZXetxlOebA6G1" }
+                { "grant_type", "client_credentials"}
             });
 
             var response = await _httpClient.SendAsync(request);
